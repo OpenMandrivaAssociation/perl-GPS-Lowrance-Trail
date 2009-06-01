@@ -11,9 +11,13 @@ Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/GPS/%{upstream_name}-%{upstream_version}.tar.gz
 
+BuildRequires: perl(Carp::Assert)
+BuildRequires: perl(Geo::Coordinates::DecimalDegrees)
+BuildRequires: perl(Geo::Coordinates::UTM)
 BuildRequires: perl(Module::Build::Compat)
+BuildRequires: perl(XML::Generator)
 BuildArch: noarch
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module allows one to convert between Lowrance GPS trail files (handled
@@ -47,5 +51,4 @@ rm -rf %buildroot
 %doc Changes README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
 
